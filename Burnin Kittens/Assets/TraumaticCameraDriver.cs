@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectTracker : MonoBehaviour {
+public class TraumaticCameraDriver : MonoBehaviour {
 
 	[System.Serializable]
 	public class AxisConfig {

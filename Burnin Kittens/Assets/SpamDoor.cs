@@ -8,17 +8,6 @@ public class SpamDoor: SpammableObject {
 
 	private bool reachedMaxSpam = false;
 
-	// The frigging raycast won't work and it's 5 a.m... f*ck it!
-	public static List<SpamDoor> dirtyGlobalField = new List<SpamDoor>();
-
-	protected virtual void Awake() {
-		dirtyGlobalField.Add(this);
-	}
-
-	protected virtual void OnDestroy() {
-		dirtyGlobalField.Remove(this);
-	}
-
 	protected override void OnSpamUpdate () {
 		if (!reachedMaxSpam) {
 			if (currentSpamLevel < spamMaxValue) {
