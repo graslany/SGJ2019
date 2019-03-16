@@ -15,7 +15,7 @@ public class Bob : MonoBehaviour {
     
     protected virtual void Update ()
     {
-        if (Input.GetButtonDown("Fire2")) {
+        if (Input.GetButtonDown("Activate")) {
             foreach (var x in proximityProbe.GetCloseObjects()) {
                 IInteractible interactible = x.GetComponent<IInteractible>();
                 if (interactible != null)
