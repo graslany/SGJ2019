@@ -6,11 +6,11 @@ public class SimplePlatformController : MonoBehaviour {
     public float maxSpeed = 5f;
     public float jumpForce = 8;
     public ProximityChecker groundCheck;
+    public SpriteRenderer bobRenderer;
 
     private bool willJump = false;
     private bool isGrounded = true;
 
-    private SpriteRenderer bobRenderer;
     private Animator bobAnimator;
     private Rigidbody2D bobPhysics;
 
@@ -18,7 +18,6 @@ public class SimplePlatformController : MonoBehaviour {
     // Use this for initialization
     void Awake () 
     {
-        bobRenderer = GetComponentInChildren<SpriteRenderer>();
         bobAnimator = GetComponentInChildren<Animator>();
         bobPhysics = GetComponent<Rigidbody2D>();
     }
