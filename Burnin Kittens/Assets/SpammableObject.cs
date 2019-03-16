@@ -13,12 +13,12 @@ public class SpammableObject : MonoBehaviour, IInteractible {
 	[Tooltip("Current spam level")]
 	public float currentSpamLevel = 0;
 
-	public void OnInteractedBy(GameObject source) {
+	public void AcceptBob(Bob source) {
 		currentSpamLevel++;
 		if (currentSpamLevel > spamMaxValue) {
 			currentSpamLevel = spamMaxValue;
 		}
-		OnSpamUpdate();
+		OnAcceptedBob(source);
 	}
 	
 	protected virtual void Update () {
@@ -28,5 +28,5 @@ public class SpammableObject : MonoBehaviour, IInteractible {
 		currentSpamLevel = Mathf.Max(0, currentSpamLevel);
 	}
 
-	protected virtual void OnSpamUpdate() {}
+	protected virtual void OnAcceptedBob(Bob source) {}
 }

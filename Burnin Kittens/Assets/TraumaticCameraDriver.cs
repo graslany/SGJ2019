@@ -4,32 +4,43 @@ using UnityEngine;
 
 public class TraumaticCameraDriver : MonoBehaviour {
 
-	[System.Serializable]
-	public class AxisConfig {
-		public bool enable;
-		public float minValue = float.MinValue;
-		public float maxValue = float.MaxValue;
-	}
+	public Bob myLittleBob;
+	public float baseCameraSize;
+	public Quaternion baseCameraAngle;
 
-	public Transform target;
-	public AxisConfig xTracking;
-	public AxisConfig yTracking;
+	private float currentStress;
+	private float stressIncreaseRate = 0.2f;
+	private float stressDecreaseRate = 0.8f;
+	private float stressToSizeDeltaRatio = -0.4f;
+	private float stressToAngleDeltaRatio = 0.45f;
 
 	// Use this for initialization
 	void Start () {
-		
+		Camera cam = GetComponent<Camera>();
+		baseCameraSize = cam.orthographicSize;
+		baseCameraAngle = cam.transform.localRotation;
+		currentStress = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (target != null && (xTracking.enable || yTracking.enable)) {
-			Vector3 myPosition = transform.position;
-			Vector3 targetPosition = target.position;
-			if (xTracking.enable)
-				myPosition.x = Mathf.Clamp(targetPosition.x, xTracking.minValue, xTracking.maxValue);
-			if (yTracking.enable)
-				myPosition.y = Mathf.Clamp(targetPosition.y, yTracking.minValue, yTracking.maxValue);
-			transform.position = myPosition;
-		}
+		Vector3 myPosition = transform.position;
+		Vector3 targetPosition = myLittleBob.transform.position;
+		myPosition.x = targetPosition.x;
+		myPosition.y =targetPosition.y;
+		transform.position = myPosition;
+
+		// Update the stress value
+		float targetStressValue = myLittleBob.GetStressValueForKind(StressKind.CameraTwister);
+		float stressDelta = targetStressValue - currentStress;
+		float stressChangeRate = Mathf.Sign(stressDelta) > 0 ? stressIncreaseRate : stressDecreaseRate;
+		if (stressDelta != 0 && Mathf.Abs(stressDelta) > stressChangeRate * Time.deltaTime)
+			currentStress += Mathf.Sign(stressDelta) * stressChangeRate * Time.deltaTime;
+		else
+			currentStress = targetStressValue;
+
+		// Update the size and rotation of the camera
+		GetComponent<Camera>().orthographicSize = baseCameraSize + stressToSizeDeltaRatio * currentStress;
+		GetComponent<Camera>().transform.localRotation = baseCameraAngle * Quaternion.Euler(0, 0, stressToAngleDeltaRatio * currentStress);
 	}
 }

@@ -6,11 +6,11 @@ public class InteractibleRelay: MonoBehaviour, IInteractible {
 
 	public GameObject target;
 
-	public void OnInteractedBy(GameObject source) {
+	public void AcceptBob(Bob source) {
 		if (enabled) {
 			IInteractible realTarget = target != null ? target.GetComponent<IInteractible>() : null;
 			if (realTarget != null)
-				realTarget.OnInteractedBy(source);
+				realTarget.AcceptBob(source);
 			else
 				Debug.LogWarning("No target available to relay the call.");
 		}

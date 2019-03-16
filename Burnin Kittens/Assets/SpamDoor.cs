@@ -8,16 +8,26 @@ public class SpamDoor: SpammableObject {
 
 	private bool reachedMaxSpam = false;
 
-	protected override void OnSpamUpdate () {
+	private float totalStressCost = 5f;
+
+	protected override void OnAcceptedBob (Bob bob) {
+
+		// Change the door state
 		if (!reachedMaxSpam) {
+			float stressProgress;
 			if (currentSpamLevel < spamMaxValue) {
-				var x = targetRenderer.material.color;
-				x.a =  (spamMaxValue - currentSpamLevel) / spamMaxValue;
-				targetRenderer.material.color = x;
+				var doorColor = targetRenderer.material.color;
+				stressProgress = currentSpamLevel / spamMaxValue;
+				doorColor.a =  1 - stressProgress;
+				targetRenderer.material.color = doorColor;
 			} else {
 				Destroy(gameObject);
 				reachedMaxSpam = true;
+				stressProgress = 0;
 			}
+
+			// Notify Bob
+			bob.SetStress(StressKind.CameraTwister, totalStressCost * stressProgress);
 		}
 	}
 

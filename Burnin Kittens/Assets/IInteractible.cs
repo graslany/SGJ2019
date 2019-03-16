@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IInteractible {
 
-	void OnInteractedBy(GameObject source);
+	void AcceptBob(Bob source);
 }
