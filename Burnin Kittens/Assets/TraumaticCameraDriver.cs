@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class TraumaticCameraDriver : MonoBehaviour {
 
+	public Camera targetCamera;
 	public Bob myLittleBob;
-	public float baseCameraSize;
-	public Quaternion baseCameraAngle;
+	public float characterYRelPosition = 0.25f;
 
+	private float baseCameraSize;
+	private Quaternion baseCameraAngle;
 	private float currentStress;
 	private float stressIncreaseRate = 0.2f;
 	private float stressDecreaseRate = 0.8f;
@@ -16,18 +18,21 @@ public class TraumaticCameraDriver : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Camera cam = GetComponent<Camera>();
-		baseCameraSize = cam.orthographicSize;
-		baseCameraAngle = cam.transform.localRotation;
+		targetCamera = targetCamera ?? GetComponent<Camera>();
+		baseCameraSize = targetCamera.orthographicSize;
+		baseCameraAngle = targetCamera.transform.localRotation;
 		currentStress = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		// Position the camera
 		Vector3 myPosition = transform.position;
 		Vector3 targetPosition = myLittleBob.transform.position;
 		myPosition.x = targetPosition.x;
-		myPosition.y =targetPosition.y;
+		float targetYPos = targetPosition.y;
+		float camYPos = targetYPos + (1 - 2*characterYRelPosition)*targetCamera.orthographicSize;
+		myPosition.y = camYPos;
 		transform.position = myPosition;
 
 		// Update the stress value
