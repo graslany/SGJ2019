@@ -1,16 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpamDoor: SpammableObject {
 
+	[Serializable]
+	public class DoorOpenedEvent: UnityEvent<SpamDoor> {}
+
 	public SpriteRenderer targetRenderer;
+
+	public DoorOpenedEvent DoorOpened;
 
 	private bool hasReachedMaxStressProgress = false;
 
 	private float highestStressProgress = 0f;
 
 	private float totalStressCost = 5f;
+
+	protected virtual void Awake() {
+		// DoorOpened = new DoorOpenedEvent();
+	}
 
 	protected override void OnAcceptedBob (Bob bob) {
 
@@ -24,6 +35,16 @@ public class SpamDoor: SpammableObject {
 				doorColor.a =  1 - stressProgress;
 				targetRenderer.material.color = doorColor;
 			} else {
+				// Notify observer of this object that is is open.
+				var d = DoorOpened;
+				if (d != null) {
+					try {
+						d.Invoke(this);
+					}
+					catch (Exception e) {Debug.LogException(e);}
+				}
+
+					
 				Destroy(gameObject);
 				hasReachedMaxStressProgress = true;
 				stressProgress = 0;
