@@ -47,5 +47,8 @@ public class TraumaticCameraDriver : MonoBehaviour {
 		// Update the size and rotation of the camera
 		GetComponent<Camera>().orthographicSize = baseCameraSize + stressToSizeDeltaRatio * currentStress;
 		GetComponent<Camera>().transform.localRotation = baseCameraAngle * Quaternion.Euler(0, 0, stressToAngleDeltaRatio * currentStress);
+
+		// Make some vibrations!
+		
 	}
 }

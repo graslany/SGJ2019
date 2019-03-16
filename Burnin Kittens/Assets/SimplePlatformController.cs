@@ -3,65 +3,58 @@ using System.Collections;
 
 public class SimplePlatformController : MonoBehaviour {
 
-    [HideInInspector] public bool facingRight = true;
-    [HideInInspector] public bool jump = false;
     public float maxSpeed = 5f;
     public float jumpForce = 8;
-    public Transform groundCheck;
+    public ProximityChecker groundCheck;
 
+    private bool willJump = false;
+    private bool isGrounded = true;
 
-    private bool grounded = false;
-    // private Animator anim;
-    private Rigidbody2D rb2d;
+    private SpriteRenderer bobRenderer;
+    private Animator bobAnimator;
+    private Rigidbody2D bobPhysics;
 
 
     // Use this for initialization
     void Awake () 
     {
-        // anim = GetComponent<Animator>();
-        rb2d = GetComponent<Rigidbody2D>();
+        bobRenderer = GetComponentInChildren<SpriteRenderer>();
+        bobAnimator = GetComponentInChildren<Animator>();
+        bobPhysics = GetComponent<Rigidbody2D>();
     }
     
     // Update is called once per frame
     void Update () 
     {
-        grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
-
-        if (Input.GetButtonDown("Jump") && grounded)
-        {
-            jump = true;
-        }
+        isGrounded = groundCheck.HasAnyCloseObject();
+        willJump = (
+            Input.GetButtonDown("Jump") &&
+            isGrounded && // No double jump in this game for now
+            bobPhysics.velocity.y <= 0); // Same reason: tapping jump twice when very close to the ground may result in double jump.
     }
 
     void FixedUpdate()
     {
-        float h = Input.GetAxis("Horizontal");
+        float horizontalInput = Input.GetAxis("Horizontal");
 
-        // anim.SetFloat("Speed", Mathf.Abs(h));
-
-		float targetSpeed = h * maxSpeed;
-		float speedDelta = targetSpeed - rb2d.velocity.x;
-        rb2d.AddForce(Vector2.right * speedDelta * rb2d.mass, ForceMode2D.Impulse);
-
-        if (h > 0 && !facingRight)
-            Flip ();
-        else if (h < 0 && facingRight)
-            Flip ();
-
-        if (jump)
+        // Move the character
+		float targetSpeed = horizontalInput * maxSpeed;
+		float speedDelta = targetSpeed - bobPhysics.velocity.x;
+        bobPhysics.AddForce(Vector2.right * speedDelta * bobPhysics.mass, ForceMode2D.Impulse);
+        if (willJump)
         {
-            // anim.SetTrigger("Submit");
-            rb2d.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            jump = false;
+            bobPhysics.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            willJump = false;
         }
-    }
 
+        // Flip the sprit if relevant
+        if (targetSpeed != 0) {
+            bobRenderer.flipX = (targetSpeed < 0);
+        }
 
-    void Flip()
-    {
-        facingRight = !facingRight;
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
+        // Play the proper animation
+        bobAnimator.SetBool("isGrounded", isGrounded);
+        bool isMovingSideways = (bobPhysics.velocity.x != 0);
+        bobAnimator.SetBool("isMovingSideways", isMovingSideways);
     }
 }
