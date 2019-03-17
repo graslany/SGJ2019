@@ -290,8 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLittleBob: {fileID: 1175319204}
-  Mixer_Street: {fileID: 24100000, guid: 310773c8642ca304a9e16a513641423a, type: 2}
-  Street: {fileID: 24500006, guid: 310773c8642ca304a9e16a513641423a, type: 2}
+  Mixer: {fileID: 24100000, guid: 310773c8642ca304a9e16a513641423a, type: 2}
 --- !u!82 &782542063
 AudioSource:
   m_ObjectHideFlags: 0

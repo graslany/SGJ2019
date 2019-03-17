@@ -9,8 +9,6 @@ AudioMixerController:
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
-  - {fileID: 24500006}
-  - {fileID: 245727003427566214}
   - {fileID: 245921216928511390}
   m_StartSnapshot: {fileID: 245921216928511390}
   m_SuspendThreshold: -80
@@ -18,7 +16,7 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: 157e0f22e6f680f4aa566410c6ca5e0b
-    name: BGM_Street_Volume
+    name: BGM_Volume
   - guid: 32c7599297e3a824e9fae7d02458567e
     name: Oppression_Volume
   m_AudioMixerGroupViews:
@@ -28,7 +26,7 @@ AudioMixerController:
     - 6e654372d65eb30459d2eadffae0ea4e
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: 245921216928511390}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -61,18 +59,6 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
---- !u!245 &24500006
-AudioMixerSnapshotController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Street
-  m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: 62dae80b78fbb6e4f996705ecbe839ff
-  m_FloatValues:
-    157e0f22e6f680f4aa566410c6ca5e0b: -80
-    32c7599297e3a824e9fae7d02458567e: -80
-  m_TransitionOverrides: {}
 --- !u!243 &243528910585741462
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -95,7 +81,7 @@ AudioMixerGroupController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: BGM_Street
+  m_Name: BGM
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: ea45c6eca75a1484394ce72e562fd3ef
   m_Children: []
@@ -133,18 +119,6 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
---- !u!245 &245727003427566214
-AudioMixerSnapshotController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Oppressed
-  m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: bd0a186b3f79f9047aaaabd03036f74c
-  m_FloatValues:
-    157e0f22e6f680f4aa566410c6ca5e0b: -80
-    32c7599297e3a824e9fae7d02458567e: -0.025776558
-  m_TransitionOverrides: {}
 --- !u!245 &245921216928511390
 AudioMixerSnapshotController:
   m_ObjectHideFlags: 0
