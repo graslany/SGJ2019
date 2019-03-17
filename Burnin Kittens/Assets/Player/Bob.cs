@@ -8,6 +8,14 @@ public class Bob : MonoBehaviour {
     private Dictionary<StressKind, float> stressValues;
 
     public ProximityChecker proximityProbe;
+
+    private static Bob _lastInstance;
+
+    public static Bob FindInstance() {
+        if (_lastInstance == null)
+            _lastInstance = GameObject.FindObjectOfType<Bob>();
+        return _lastInstance;
+    }
     
     protected virtual void Start () {
         stressValues = new Dictionary<StressKind, float>();
