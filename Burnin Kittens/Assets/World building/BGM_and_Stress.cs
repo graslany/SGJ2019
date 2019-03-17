@@ -7,8 +7,7 @@ public class BGM_and_Stress : MonoBehaviour {
 
 	public Bob myLittleBob;
 	
-	public AudioMixer Mixer_Street;
-	public AudioMixerSnapshot Street;
+	public AudioMixer Mixer;
 	
 	private float currentStress; // gestion du stress (cf TraumaticCameraDriver)
 	private float stressIncreaseRate = 0.2f;
@@ -17,7 +16,8 @@ public class BGM_and_Stress : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		currentStress = 0;
-		Street.TransitionTo(2000);
+		Mixer.SetFloat("BGM_Volume", 0);
+		Mixer.SetFloat("Oppression_Volume", -80);
 	}
 	
 	// Update is called once per frame
@@ -36,7 +36,7 @@ public class BGM_and_Stress : MonoBehaviour {
 		float volumeStreet = 20f * Mathf.Log10(1 - sliderOppressed);
 		//Debug.Log("volumeOppressed = " + volumeOppressed + "   volumeStreet = " + volumeStreet);
 		
-		Mixer_Street.SetFloat("BGM_Street_Volume", volumeStreet);
-		Mixer_Street.SetFloat("Oppression_Volume", volumeOppressed);
+		Mixer.SetFloat("BGM_Volume", volumeStreet);
+		Mixer.SetFloat("Oppression_Volume", volumeOppressed);
 	}
 }
