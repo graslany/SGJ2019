@@ -279,12 +279,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60fa3b1deff8a494e9ce17ad667a1e09, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &191259199 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114999667661641546, guid: 60fa3b1deff8a494e9ce17ad667a1e09,
-    type: 2}
-  m_PrefabInternal: {fileID: 191259198}
-  m_Script: {fileID: 11500000, guid: 488dea8720ce9fe4883347d38f34317a, type: 3}
 --- !u!1 &214130090
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,7 +924,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140e2fc9d0edb3948b39c0be653bf4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myLittleBob: {fileID: 191259199}
   Mixer: {fileID: 24100000, guid: fcd41bc3945c6154293c03dfc4a80b55, type: 2}
 --- !u!82 &886503337
 AudioSource:
@@ -1352,6 +1345,74 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.3}
   m_EdgeRadius: 0
+--- !u!1 &1387535143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1387535144}
+  - component: {fileID: 1387535146}
+  - component: {fileID: 1387535145}
+  m_Layer: 0
+  m_Name: Exit door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1387535144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1387535143}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.107, y: -1.812, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1645113249}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1387535145
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1387535143}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.13621521, y: -0.09080982}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3329697, y: 2.5740108}
+  m_EdgeRadius: 0
+--- !u!114 &1387535146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1387535143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d262ba65ecd746249b5c7c999519d25a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hint: {fileID: 21300000, guid: 9d00dff7464e9754aa845e449ecfe0f2, type: 3}
+  maxDistance: 2
 --- !u!1 &1430162219
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,6 +1521,35 @@ Transform:
   - {fileID: 850314432}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1645113248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1645113249}
+  m_Layer: 0
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1645113249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1645113248}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1387535144}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1675193017
 GameObject:
