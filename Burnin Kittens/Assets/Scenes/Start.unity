@@ -1170,7 +1170,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Samuel Saint\xE9"
+  m_Text: "Samuel Sain-p\xE9"
 --- !u!222 &787243268
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1657,7 +1657,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Julie Chave, Ariane Noizon
+  m_Text: Julie Chave, Ariane Loizon
 --- !u!222 &1271219728
 CanvasRenderer:
   m_ObjectHideFlags: 0
