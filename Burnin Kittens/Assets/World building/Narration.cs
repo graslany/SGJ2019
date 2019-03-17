@@ -11,27 +11,32 @@ public class Narration : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		PlayNarration(0);
+		
 	}
 	
 	private void PlayNarration(int track)
 	{
-		if (narrationSource.clip != null)
+		if (narrations[track] != null)
 		{
-			narrationSource.Stop();
+			if (narrationSource.clip != null)
+			{
+				narrationSource.Stop();
+			}
+			narrationSource.clip = narrations[track];
+			narrationSource.Play();
 		}
-		narrationSource.clip = narrations[track];
-		narrationSource.Play();
-		
 	}
 	
 	public void TellStory(string story) // hard coded otherwise it's too clean
 	{
 		switch(story){
-			case "clef":
-				// PlayNarration(1);
+			case "Trigger_00":
+				PlayNarration(0);
 				break;
-			case "porte":
+			case "Trigger_01":
+				PlayNarration(1);
+				break;
+			case "Trigger_02":
 				PlayNarration(2);
 				break;
 			// default:
