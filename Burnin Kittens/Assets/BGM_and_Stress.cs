@@ -9,8 +9,6 @@ public class BGM_and_Stress : MonoBehaviour {
 	
 	public AudioMixer Mixer_Street;
 	public AudioMixerSnapshot Street;
-
-	private float m_TransitionToStreet; // duration of transition (in ms)
 	
 	private float currentStress; // gestion du stress (cf TraumaticCameraDriver)
 	private float stressIncreaseRate = 0.2f;
@@ -18,7 +16,6 @@ public class BGM_and_Stress : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		m_TransitionToStreet = 1000;
 		currentStress = 0;
 		Street.TransitionTo(2000);
 	}

@@ -420,7 +420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -33.875, y: -80}
+  m_AnchoredPosition: {x: 0.000022888, y: -148.02}
   m_SizeDelta: {x: 440.4, y: 67.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &263170047
@@ -620,9 +620,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Game design
-
-'
+  m_Text: Game designer
 --- !u!222 &391560807
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -776,7 +774,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -114}
+  m_AnchoredPosition: {x: 0, y: -140.48}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &609443722
@@ -1055,7 +1053,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lead scientist
+  m_Text: 'Direction scientifique
 
 '
 --- !u!222 &755511332
@@ -1101,9 +1099,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.015000001}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -284.1, y: 46.434}
-  m_SizeDelta: {x: -568.1, y: -92}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -0.025024414, y: 46.408005}
+  m_SizeDelta: {x: 0.049988, y: -92.053}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &787243265
 GameObject:
@@ -1247,7 +1245,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Acknowledgements
+  m_Text: 'Remerciements
 
 '
 --- !u!222 &939814433
@@ -1289,7 +1287,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 4.768997}
+  m_AnchoredPosition: {x: 0, y: 7.473999}
   m_SizeDelta: {x: -60, y: -314.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1012975575
@@ -1324,9 +1322,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Developer
-
-'
+  m_Text: "D\xE9veloppeur"
 --- !u!222 &1012975576
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1408,6 +1404,85 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1146759279}
+  m_CullTransparentMesh: 0
+--- !u!1 &1161041962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1161041963}
+  - component: {fileID: 1161041965}
+  - component: {fileID: 1161041964}
+  m_Layer: 5
+  m_Name: Text (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1161041963
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1161041962}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1502653968}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -74.7}
+  m_SizeDelta: {x: -60, y: -269.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1161041964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1161041962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.092559636, g: 0.16921464, b: 0.3018868, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: "Jeu r\xE9alis\xE9 lors de la cinqui\xE8me Scientific Game Jam de Grenoble,
+    organis\xE9e du 15 au 17 Mars 2019 par la Communaut\xE9 Universit\xE9 Grenoble
+    Alpes, en partenariat avec La Casemate (CCSTI) et avec le soutien financier de
+    l\u2019Idex Universit\xE9 Grenoble Alpes.  Cette ann\xE9e, l'\xE9v\xE9nement est
+    \xE9galement labellis\xE9 \"80 ans du CNRS\""
+--- !u!222 &1161041965
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1161041962}
   m_CullTransparentMesh: 0
 --- !u!1 &1254490712
 GameObject:
@@ -1622,8 +1697,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 0}
+  m_AnchoredPosition: {x: 0, y: -22.5}
+  m_SizeDelta: {x: 600, y: 287.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1339092540
 MonoBehaviour:
@@ -1766,13 +1841,14 @@ RectTransform:
   - {fileID: 1616239687}
   - {fileID: 263170046}
   - {fileID: 787243266}
+  - {fileID: 1161041963}
   m_Father: {fileID: 1727139999}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.22565702}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -71.078, y: -0.019004822}
-  m_SizeDelta: {x: 142.15, y: 0.8}
+  m_AnchoredPosition: {x: -0.0014648438, y: -0.20948792}
+  m_SizeDelta: {x: -0.0030518, y: 0.41898}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1530617116
 GameObject:
@@ -1804,10 +1880,10 @@ RectTransform:
   m_Father: {fileID: 305856325}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 175}
-  m_SizeDelta: {x: 371.7, y: 80}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -144}
+  m_SizeDelta: {x: -972.3, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1530617118
 MonoBehaviour:
@@ -2184,8 +2260,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -98.8}
-  m_SizeDelta: {x: 0, y: -197.2}
+  m_AnchoredPosition: {x: 0.5, y: -94.6}
+  m_SizeDelta: {x: 1, y: -188.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1730846661
 GameObject:
@@ -2446,7 +2522,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Voice acting
+  m_Text: 'Voix
 
 
 '
@@ -2599,7 +2675,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '2D Artists
+  m_Text: 'Graphistes
 
 '
 --- !u!222 &2066944030
