@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Mixer_Smartphone
+  m_OutputGroup: {fileID: 0}
+  m_MasterGroup: {fileID: 24300002}
+  m_Snapshots:
+  - {fileID: 245896061322101710}
+  - {fileID: 24500006}
+  m_StartSnapshot: {fileID: 24500006}
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
+  m_UpdateMode: 0
+  m_ExposedParameters: []
+  m_AudioMixerGroupViews:
+  - guids:
+    - 13c762c73abc4004a987ad819e9356e1
+    - 8e39ef949ea36f540947fcf27ed25af4
+    name: View
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 24500006}
+--- !u!243 &24300002
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 13c762c73abc4004a987ad819e9356e1
+  m_Children:
+  - {fileID: 243275791376577204}
+  m_Volume: c92daa41d4e8d0f42be29bad4b30244f
+  m_Pitch: 07da6eeed7f6b5847a896bc17f4745dd
+  m_Effects:
+  - {fileID: 24400004}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400004
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: b706af24a27bc594f9e118d0f94fa607
+  m_EffectName: Attenuation
+  m_MixLevel: 88ec082cb32f21545955cbb9e6723cb0
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &24500006
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: FullVolume
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: e4fcff76c324c1f45a6d7d607e10cfe7
+  m_FloatValues: {}
+  m_TransitionOverrides: {}
+--- !u!243 &243275791376577204
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sonnerie
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 8e39ef949ea36f540947fcf27ed25af4
+  m_Children: []
+  m_Volume: 473e7f2c52710be4cae4605aa7dd5f3e
+  m_Pitch: fd8f82927600a3640b500121715e333d
+  m_Effects:
+  - {fileID: 244995682210945916}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &244995682210945916
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 74362252dbc8af94fa2c109774344af7
+  m_EffectName: Attenuation
+  m_MixLevel: 45c882d4341ddd941b689cc033f44d08
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &245896061322101710
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Silence
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 3117bb26ed2e7284896fef6fc661bf53
+  m_FloatValues:
+    c92daa41d4e8d0f42be29bad4b30244f: -0.002441872
+    473e7f2c52710be4cae4605aa7dd5f3e: -80
+  m_TransitionOverrides: {}
