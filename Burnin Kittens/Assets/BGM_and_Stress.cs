@@ -34,7 +34,7 @@ public class BGM_and_Stress : MonoBehaviour {
 			currentStress = targetStressValue;
 				
 		float sliderOppressed = Mathf.Clamp(((currentStress - 0.5f) / 10), 0, 1);
-		Debug.Log("sliderOppressed = " + sliderOppressed + "    currentStress = " + currentStress);
+		// Debug.Log("sliderOppressed = " + sliderOppressed + "    currentStress = " + currentStress);
 		float volumeOppressed = 20f * Mathf.Log10(sliderOppressed);
 		float volumeStreet = 20f * Mathf.Log10(1 - sliderOppressed);
 		//Debug.Log("volumeOppressed = " + volumeOppressed + "   volumeStreet = " + volumeStreet);
