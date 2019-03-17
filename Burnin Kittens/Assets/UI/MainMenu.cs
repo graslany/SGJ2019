@@ -9,13 +9,13 @@ public class MainMenu : MonoBehaviour {
 	public GameObject creditsUI;
 	
 	public void DisplayMainMenu() {
-		mainMenuUI.SetActive(true);
-		creditsUI.SetActive(false);
+		SafeSetActive(mainMenuUI, true);
+		SafeSetActive(creditsUI, false);
 	}
 	
 	public void DisplayCredits() {
-		mainMenuUI.SetActive(false);
-		creditsUI.SetActive(true);
+		SafeSetActive(mainMenuUI, false);
+		SafeSetActive(creditsUI, true);
 	}
 	
 	public void LaunchGame() {
@@ -26,8 +26,20 @@ public class MainMenu : MonoBehaviour {
 	public void QuitGame() {
 		Application.Quit();
 	}
+	
+	public void GoToMainMenu() {
+		SceneManager.LoadScene("Start");
+	}
 
 	protected virtual void Start () {
 		DisplayMainMenu();
+	}
+	
+	private void SafeSetActive(GameObject someObject, bool value) {
+		if (someObject != null)
+		try {
+			someObject.SetActive(value);
+		}
+		catch { }
 	}
 }
