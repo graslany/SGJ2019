@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class SpamDoor: SpammableObject {
+public class SpamDoor: SpammableObject, IStressSource {
 
 	[Serializable]
 	public class DoorOpenedEvent: UnityEvent<SpamDoor> {}
@@ -19,8 +19,16 @@ public class SpamDoor: SpammableObject {
 
 	private float totalStressCost = 5f;
 
-	protected virtual void Awake() {
-		// DoorOpened = new DoorOpenedEvent();
+	public float GetStressValue() {
+		return totalStressCost * highestStressProgress;
+	}
+
+	protected virtual void OnEnable() {
+		Bob.FindInstance().AddStressSource(this, StressKind.CameraTwister);
+	}
+
+	protected virtual void OnDisable() {
+		Bob.FindInstance().RemoveStressSource(this, StressKind.CameraTwister);
 	}
 
 	protected override void OnAcceptedBob (Bob bob) {
@@ -50,9 +58,6 @@ public class SpamDoor: SpammableObject {
 				stressProgress = 0;
 				highestStressProgress = 0;
 			}
-
-			// Notify Bob
-			bob.SetStress(StressKind.CameraTwister, totalStressCost * highestStressProgress);
 		}
 	}
 

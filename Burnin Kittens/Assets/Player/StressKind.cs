@@ -1,3 +1,5 @@
 public enum StressKind {
-    CameraTwister
+    CameraTwister,
+
+    AlternateReality
 }
