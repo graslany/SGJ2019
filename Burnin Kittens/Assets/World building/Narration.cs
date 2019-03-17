@@ -39,6 +39,24 @@ public class Narration : MonoBehaviour {
 			case "Trigger_02":
 				PlayNarration(2);
 				break;
+			case "Trigger_03":
+				PlayNarration(3);
+				break;
+			case "Trigger_04":
+				PlayNarration(4);
+				break;
+			case "Trigger_05":
+				PlayNarration(5);
+				break;
+			case "Trigger_06":
+				PlayNarration(6);
+				break;
+			case "Trigger_07":
+				PlayNarration(7);
+				break;
+			case "Trigger_08":
+				PlayNarration(8);
+				break;
 			// default:
 			//	Debug.Log("No narration corresponding");
 		}
