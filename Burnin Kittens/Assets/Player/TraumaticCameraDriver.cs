@@ -11,9 +11,9 @@ public class TraumaticCameraDriver : MonoBehaviour {
 	private float baseCameraSize;
 	private Quaternion baseCameraAngle;
 	private float currentStress;
-	private float stressIncreaseRate = 0.2f;
+	private float stressIncreaseRate = 0.3f;
 	private float stressDecreaseRate = 0.8f;
-	private float stressToSizeDeltaRatio = -0.4f;
+	private float stressToSizeDeltaRatio = -0.55f;
 	private float stressToAngleDeltaRatio = 0.45f;
 
 	// Use this for initialization
@@ -27,13 +27,13 @@ public class TraumaticCameraDriver : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// Position the camera
-		Vector3 myPosition = transform.position;
+		Vector3 camPosition = targetCamera.transform.position;
 		Vector3 targetPosition = myLittleBob.transform.position;
-		myPosition.x = targetPosition.x;
+		camPosition.x = targetPosition.x;
 		float targetYPos = targetPosition.y;
 		float camYPos = targetYPos + (1 - 2*characterYRelPosition)*targetCamera.orthographicSize;
-		myPosition.y = camYPos;
-		transform.position = myPosition;
+		camPosition.y = camYPos;
+		targetCamera.transform.position = camPosition;
 
 		// Update the stress value
 		float targetStressValue = myLittleBob.GetStressValueForKind(StressKind.CameraTwister);
@@ -45,10 +45,7 @@ public class TraumaticCameraDriver : MonoBehaviour {
 			currentStress = targetStressValue;
 
 		// Update the size and rotation of the camera
-		GetComponent<Camera>().orthographicSize = baseCameraSize + stressToSizeDeltaRatio * currentStress;
-		GetComponent<Camera>().transform.localRotation = baseCameraAngle * Quaternion.Euler(0, 0, stressToAngleDeltaRatio * currentStress);
-
-		// Make some vibrations!
-		
+		targetCamera.orthographicSize = baseCameraSize + stressToSizeDeltaRatio * currentStress;
+		targetCamera.transform.localRotation = baseCameraAngle * Quaternion.Euler(0, 0, stressToAngleDeltaRatio * currentStress);
 	}
 }
